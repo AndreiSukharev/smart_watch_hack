@@ -1,5 +1,6 @@
 import {createMaterialBottomTabNavigator, MaterialBottomTabScreenProps} from "@react-navigation/material-bottom-tabs";
 
+
 export enum EnumMainRoutes {
     main = "Главное",
     sos = "SOS",

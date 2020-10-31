@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import {EnumProfileRoutes, NavigationProfileProps} from "../../../types/routes-type/routes-profile-types";
-import {Image, View} from "react-native";
 import {SafeAreaView} from "react-native-safe-area-context";
 import { StyleSheet } from 'react-native'
 import {styles} from "../../styles";
 import {Title, Button, Snackbar, Card, Paragraph} from "react-native-paper";
+import {EnumMainRoutes, NavigationMainProps} from "../../../types/routes-type/routes-main-types";
 
 const MSG = 'Вы планируете совершить о происшествии. \n' +
     'В случае подтверждения с вами свяжется оператор поддержки';
 
-type Props = NavigationProfileProps<EnumProfileRoutes.profile>
+type Props = NavigationProfileProps<EnumProfileRoutes.profile> & NavigationMainProps<EnumMainRoutes.sos>
 
 type State = {
     buttonText: string,
@@ -27,6 +27,7 @@ export default class Sos extends Component<Props, State> {
 
     sendSos = () => {
         this.setState({isSend: false, visibleSnackBar: true});
+        setTimeout(() => this.props.navigation.navigate(EnumMainRoutes.main), 1500)
     }
 
     render() {
@@ -45,9 +46,9 @@ export default class Sos extends Component<Props, State> {
                 </Card>
                 <Snackbar
                     visible={this.state.visibleSnackBar}
-                    duration={3000}
+                    duration={1500}
                     onDismiss={() => this.setState({visibleSnackBar: false})}>
-                    Ожидайте завонка
+                    Заявка принята
                 </Snackbar>
             </SafeAreaView>
         );

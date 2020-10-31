@@ -3,6 +3,8 @@ import {EnumProfileRoutes, NavigationProfileProps} from "../../../types/routes-t
 import {Image, View} from "react-native";
 import {SafeAreaView} from "react-native-safe-area-context";
 import { StyleSheet } from 'react-native'
+
+import AccelerometerComponent from "../../../components/Accelerometer";
 import {styles} from "../../styles";
 import {Title, Button, Snackbar} from "react-native-paper";
 import Logout from "../../../components/Logout";
@@ -80,6 +82,7 @@ export default class Profile extends Component<Props, State> {
                     onDismiss={() => this.setState({visibleSnackBar: false})}>
                     Координаты отправлены
                 </Snackbar>
+                <AccelerometerComponent/>
             </SafeAreaView>
         );
     }

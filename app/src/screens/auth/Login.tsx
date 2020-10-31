@@ -9,6 +9,7 @@ import {styles} from "../styles";
 import {SafeAreaView} from "react-native-safe-area-context";
 import DismissKeyboardWrapper from "../../components/DismissKeyboardWrapper";
 import {ScrollView} from "react-native-gesture-handler";
+import {Image} from "react-native";
 
 type NavigationType = NavigationAuthProps<EnumAuthRoutes.login>;
 type Props = NavigationType & LinkStateProps & LinkDispatchProps;
@@ -40,6 +41,7 @@ const Login: React.FC<Props> = ({navigation, isLogged, loginReducer}) => {
 
             <DismissKeyboardWrapper>
                 <SafeAreaView style={styles.container}>
+                    <Image style={{ alignSelf: 'center'}} source={require('../../../assets/department.png')}/>
                     <TextInput
                         label="Телефон"
                         style={styles.input}
