@@ -4,7 +4,10 @@ import Analytics from '@/views/Analytics.vue';
 
 import Registries from '@/views/Registries.vue';
 import Settings from '@/views/Settings.vue';
+
 import Tasks from '@/views/Tasks.vue';
+import ApproveGadget from '@/views/ApproveGadget.vue';
+import ReactToSOS from '@/views/ReactToSOS.vue';
 
 import Companies from '@/views/Companies.vue';
 import Company from '@/views/Company.vue';
@@ -41,10 +44,22 @@ const routes = [
     name: 'settings',
     component: Settings
   },
+
+  // TASKS
   {
     path: '/tasks',
     name: 'tasks',
     component: Tasks
+  },
+  {
+    path: '/approve-gadget',
+    name: 'approve-gadget',
+    component: ApproveGadget
+  },
+  {
+    path: '/react-to-sos',
+    name: 'react-to-sos',
+    component: ReactToSOS
   },
 
   // COMPANY
