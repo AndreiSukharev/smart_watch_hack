@@ -6,46 +6,40 @@
     </div>
     <v-tabs color="gray" @change="onTabsChange">
       <v-tab>Общие сведения</v-tab>
-      <v-tab>Организационно-штатная структура</v-tab>
-      <v-tab>Объекты</v-tab>
+      <v-tab>Карта объекта</v-tab>
     </v-tabs>
-    <company-info v-show="currentTabIndex === 0" :company="company" />
-    <company-employee v-show="currentTabIndex === 1" :employee="employee" />
-    <company-objects v-show="currentTabIndex === 2" :objects="objects" />
+    <object-info v-show="currentTabIndex === 0" :object="object" />
+    <object-map v-show="currentTabIndex === 1" :object="object" />
   </div>
 </template>
 
 <script>
 import { has } from 'lodash';
-import CompanyInfo from '@/components/CompanyInfo.vue';
-import CompanyEmployee from '@/components/CompanyEmployee.vue';
-import CompanyObjects from '@/components/CompanyObjects.vue';
+import ObjectInfo from '@/components/ObjectInfo.vue';
+import ObjectMap from '@/components/ObjectMap.vue';
 
 export default {
   name: 'Company',
   components: {
-    CompanyInfo,
-    CompanyEmployee,
-    CompanyObjects
+    ObjectInfo,
+    ObjectMap
   },
   data() {
     return {
       headerText: '',
-      company: null,
-      employee: [],
-      objects: [],
+      object: null,
       currentTabIndex: 0
     };
   },
   created() {
     // this.headerText = this.$route.params.id;
-    // // fetch company
+    // // fetch object
 
     // Don't ever do like this
     if (has(this.$route, 'params.name')) {
       this.headerText = this.$route.params.name;
     } else {
-      this.headerText = 'Организация 1';
+      this.headerText = 'ОКС 1';
     }
   },
   methods: {

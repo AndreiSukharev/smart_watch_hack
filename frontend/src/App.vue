@@ -29,7 +29,13 @@
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn> -->
     </v-app-bar>
-    <v-navigation-drawer app color="primary" floating :permanent="sidebarMenu">
+    <v-navigation-drawer
+      v-if="notLogin"
+      app
+      color="primary"
+      floating
+      :permanent="sidebarMenu"
+    >
       <template v-slot:prepend>
         <v-list-item two-line>
           <v-list-item-avatar height="80" class="rounded-0">
@@ -133,8 +139,8 @@ export default {
         ]
       },
       {
-        title: 'Общие сведения',
-        routeName: 'statistics',
+        title: 'Реестры',
+        routeName: 'registries',
         params: {},
         children: []
       },
@@ -145,13 +151,24 @@ export default {
         children: []
       },
       {
-        title: 'Устройства',
-        routeName: 'dashboard',
+        title: 'Задачи',
+        routeName: 'tasks',
+        params: {},
+        children: []
+      },
+      {
+        title: 'Настройки',
+        routeName: 'settings',
         params: {},
         children: []
       }
     ]
   }),
+  computed: {
+    notLogin() {
+      return this.$route.name !== 'login';
+    }
+  },
   mounted() {
     this.selectedItem = 0;
   },

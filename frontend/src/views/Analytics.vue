@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="p-2">
+  <div class="pa-6">
+    <div>
       <div class="text-h3" v-text="headerText"></div>
       <div class="header-divider"></div>
     </div>
