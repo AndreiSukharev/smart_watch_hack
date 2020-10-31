@@ -3,6 +3,8 @@ import Dashboard from '@/views/Dashboard.vue';
 import Analytics from '@/views/Analytics.vue';
 
 import Registries from '@/views/Registries.vue';
+import Settings from '@/views/Settings.vue';
+import Tasks from '@/views/Tasks.vue';
 
 import Companies from '@/views/Companies.vue';
 import Company from '@/views/Company.vue';
@@ -33,6 +35,16 @@ const routes = [
     path: '/registries',
     name: 'registries',
     component: Registries
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    component: Settings
+  },
+  {
+    path: '/tasks',
+    name: 'tasks',
+    component: Tasks
   },
 
   // COMPANY

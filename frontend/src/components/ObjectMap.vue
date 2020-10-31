@@ -1,13 +1,13 @@
 <template>
-  <div class="d-flex justify-center pa-16"><Map /></div>
+  <div class="d-flex justify-center pa-16"></div>
 </template>
 
 <script>
-import Map from '@/components/Map.vue';
+// import Map from '@/components/Map.vue';
 
 export default {
   components: {
-    Map
+    // Map
   }
 };
 </script>
