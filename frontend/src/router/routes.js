@@ -1,7 +1,15 @@
 import Login from '@/views/Login.vue';
 import Dashboard from '@/views/Dashboard.vue';
 import Analytics from '@/views/Analytics.vue';
+
+import Registries from '@/views/Registries.vue';
+
+import Companies from '@/views/Companies.vue';
 import Company from '@/views/Company.vue';
+
+import Objects from '@/views/Objects.vue';
+import Object from '@/views/Object.vue';
+
 import Employee from '@/views/Employee.vue';
 import Building from '@/views/Building.vue';
 
@@ -22,10 +30,36 @@ const routes = [
     component: Analytics
   },
   {
+    path: '/registries',
+    name: 'registries',
+    component: Registries
+  },
+
+  // COMPANY
+  {
+    path: '/companies',
+    name: 'companies',
+    component: Companies
+  },
+  {
     path: '/company',
     name: 'company',
     component: Company
   },
+
+  // OBJECT
+  {
+    path: '/objects',
+    name: 'objects',
+    component: Objects
+  },
+  {
+    path: '/object',
+    name: 'object',
+    component: Object
+  },
+
+  // EMPLOYEE
   {
     path: '/employee',
     name: 'employee',

@@ -133,8 +133,8 @@ export default {
         ]
       },
       {
-        title: 'Общие сведения',
-        routeName: 'statistics',
+        title: 'Реестры',
+        routeName: 'registries',
         params: {},
         children: []
       },
