@@ -1,0 +1,9 @@
+.DS_Store
+.idea/
+
+db_mongo_local/
+server/node_modules
+server/package-lock.json
+server/.env
+dist
+
