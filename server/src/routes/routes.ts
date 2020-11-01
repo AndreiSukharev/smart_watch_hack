@@ -40,6 +40,37 @@ const routes = (app: express.Application) => {
         }
     });
 
+    app.post('/api/device', async (req, res) => {
+        try {
+            const device = await api.addDevice(req.body);
+            res.send(device);
+        } catch (err) {
+            console.log(err.message);
+            res.status(401).send(err.message);
+        }
+    });
+
+    app.get('/api/device/:_id', async (req, res) => {
+        try {
+            const { _id } =  req.params;
+            const device = await api.getDevice(_id);
+            res.send(device);
+        } catch (err) {
+            console.log(err.message);
+            res.status(401).send(err.message);
+        }
+    });
+
+    app.post('/api/sos', async (req, res) => {
+        try {
+            const result = await api.sos(req.body);
+            res.send(result);
+        } catch (err) {
+            console.log(err.message);
+            res.status(401).send(err.message);
+        }
+    });
+
 };
 
 export default routes;
