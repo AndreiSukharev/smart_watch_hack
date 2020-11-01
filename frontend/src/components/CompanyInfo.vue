@@ -35,7 +35,28 @@
       </div>
     </div>
     <v-divider />
-    <div class="mt-12 pa-6">DOCUMENTS</div>
+    <div class="mt-12 d-flex">
+      <div class="pdf-file">
+        <v-img
+          contain
+          src="../assets/pdf.png"
+          transition="scale-transition"
+          height="64"
+          width="64"
+        />
+        <div class="mt-2">Устав</div>
+      </div>
+      <div class="ml-4 pdf-file">
+        <v-img
+          contain
+          src="../assets/pdf.png"
+          transition="scale-transition"
+          height="64"
+          width="64"
+        />
+        <div class="mt-2">Численность сотрудников</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -71,5 +92,10 @@ export default {
   & > :first-child {
     width: 300px;
   }
+}
+.pdf-file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

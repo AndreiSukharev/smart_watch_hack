@@ -75,7 +75,38 @@
       </div>
     </div>
     <v-divider />
-    <div class="mt-12 pa-6">DOCUMENTS</div>
+    <div class="mt-12 d-flex">
+      <div class="pdf-file">
+        <v-img
+          contain
+          src="../assets/pdf.png"
+          transition="scale-transition"
+          height="64"
+          width="64"
+        />
+        <div class="mt-2">Проект</div>
+      </div>
+      <div class="ml-4 pdf-file">
+        <v-img
+          contain
+          src="../assets/pdf.png"
+          transition="scale-transition"
+          height="64"
+          width="64"
+        />
+        <div class="mt-2">Смета</div>
+      </div>
+      <div class="ml-4 pdf-file">
+        <v-img
+          contain
+          src="../assets/pdf.png"
+          transition="scale-transition"
+          height="64"
+          width="64"
+        />
+        <div class="mt-2">Численность</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -116,5 +147,10 @@ export default {
 .split-two {
   display: flex;
   justify-content: space-between;
+}
+.pdf-file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
