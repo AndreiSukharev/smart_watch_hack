@@ -4,24 +4,36 @@
       <div class="text-h3" v-text="'Мониторинг объектов строительства'"></div>
       <div class="header-divider"></div>
     </div>
-    <div class="charts-container">
-      <div class="charts-container__group">
-        <pie-chart :chart-data="chartData" :options="chartOptions" />
-        <div>Объекты по округам г. Москва</div>
-      </div>
-      <div class="charts-container__group">
-        <pie-chart :chart-data="chartData" :options="chartOptions" />
-        <div>Количество сотрудников по застройщикам</div>
-      </div>
-      <div class="charts-container__group">
-        <pie-chart :chart-data="chartData" :options="chartOptions" />
-        <div>Количество устройств на мониторинге по округам г. Москва</div>
-      </div>
-    </div>
-    <div class="bar-chart-container">
-      <bar-chart :chart-data="chartData" :options="chartOptions" />
-      <div>Количество устройств в разных статусах по объектам г. Москва</div>
-    </div>
+    <v-row align="start">
+      <v-col>
+        <div class="charts-container__group">
+          <pie-chart :chart-data="chartData" :options="chartOptions" />
+          <div>Объекты по округам г. Москва</div>
+        </div>
+      </v-col>
+      <v-col>
+        <div class="charts-container__group">
+          <pie-chart :chart-data="chartData" :options="chartOptions" />
+          <div>Количество сотрудников по застройщикам</div>
+        </div>
+      </v-col>
+      <v-col>
+        <div class="charts-container__group">
+          <pie-chart :chart-data="chartData" :options="chartOptions" />
+          <div>Количество устройств на мониторинге по округам г. Москва</div>
+        </div>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <div class="bar-chart-container">
+          <bar-chart :chart-data="chartData" :options="chartOptions" />
+          <div>
+            Количество устройств в разных статусах по объектам г. Москва
+          </div>
+        </div>
+      </v-col>
+    </v-row>
   </div>
 </template>
 

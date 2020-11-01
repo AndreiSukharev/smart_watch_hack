@@ -146,7 +146,7 @@ export default {
       },
       {
         title: 'Управление',
-        routeName: 'dashboard',
+        routeName: 'management',
         params: {},
         children: []
       },
