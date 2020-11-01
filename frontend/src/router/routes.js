@@ -5,6 +5,13 @@ import Analytics from '@/views/Analytics.vue';
 import Registries from '@/views/Registries.vue';
 import Settings from '@/views/Settings.vue';
 
+import Management from '@/views/Management.vue';
+import CompanyCreate from '@/views/CompanyCreate.vue';
+import ObjectCreate from '@/views/ObjectCreate.vue';
+import EmployeeCreate from '@/views/EmployeeCreate.vue';
+import GadgetConfig from '@/views/GadgetConfig.vue';
+import BuildingCycleCreate from '@/views/BuildingCycleCreate.vue';
+
 import Tasks from '@/views/Tasks.vue';
 import ApproveGadget from '@/views/ApproveGadget.vue';
 import ReactToSOS from '@/views/ReactToSOS.vue';
@@ -43,6 +50,38 @@ const routes = [
     path: '/settings',
     name: 'settings',
     component: Settings
+  },
+
+  // MANAGEMENT
+  {
+    path: '/management',
+    name: 'management',
+    component: Management
+  },
+  {
+    path: '/company/create',
+    name: 'company-create',
+    component: CompanyCreate
+  },
+  {
+    path: '/object/create',
+    name: 'object-create',
+    component: ObjectCreate
+  },
+  {
+    path: '/employee/create',
+    name: 'employee-create',
+    component: EmployeeCreate
+  },
+  {
+    path: '/gadget/config',
+    name: 'gadget-config',
+    component: GadgetConfig
+  },
+  {
+    path: '/building-cycle/create',
+    name: 'building-cycle-create',
+    component: BuildingCycleCreate
   },
 
   // TASKS
