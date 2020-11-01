@@ -6,7 +6,7 @@ import { StyleSheet } from 'react-native'
 
 import AccelerometerComponent from "../../../components/Accelerometer";
 import {styles} from "../../styles";
-import {Title, Button, Snackbar} from "react-native-paper";
+import {Title, Button, Snackbar, Text} from "react-native-paper";
 import Logout from "../../../components/Logout";
 
 const NOT_STARTED_SHIFT = 'не начата';
@@ -23,9 +23,10 @@ type State = {
     scheduler: string,
     amountWorked: string,
     shift: string,
-    // isShiftStarted: boolean,
+    isShiftStarted: boolean,
     buttonText: string,
     visibleSnackBar: boolean,
+    geoText: string,
 }
 
 export default class Profile extends Component<Props, State> {
@@ -38,27 +39,29 @@ export default class Profile extends Component<Props, State> {
         scheduler: 'ПН-ПТ, 10-18',
         amountWorked: 'Окт, 2 ч',
         shift: NOT_STARTED_SHIFT,
-        // isShiftStarted: false,
+        isShiftStarted: false,
         buttonText: START_SHIFT,
         visibleSnackBar: false,
+        geoText: '',
     }
 
     manageShift = () => {
         let shift: string;
         let buttonText: string;
         let visibleSnackBar = false;
+        let geoText : string = '';
         if (this.state.shift === NOT_STARTED_SHIFT) {
             const date = new Date();
             shift = `${date.getHours()}.${date.getMinutes()}`;
             buttonText = FINISH_SHIFT;
             visibleSnackBar = true;
+            geoText = 'Геопозиция передается';
         } else {
             shift = NOT_STARTED_SHIFT;
             buttonText = START_SHIFT;
         }
-        this.setState({shift, buttonText, visibleSnackBar});
+        this.setState({shift, buttonText, visibleSnackBar, geoText});
     }
-
 
     render() {
         return (
@@ -71,6 +74,7 @@ export default class Profile extends Component<Props, State> {
                 <Title>Всего отработано: {this.state.amountWorked}</Title>
                 <View style={localStyles.shift}>
                     <Title style={{textAlign: 'center'}}>Текущая смена: {this.state.shift}</Title>
+                    <Title style={{textAlign: 'center'}}>{this.state.geoText}</Title>
                     <Button mode="outlined" onPress={this.manageShift}>
                         {this.state.buttonText}
                     </Button>
@@ -80,7 +84,7 @@ export default class Profile extends Component<Props, State> {
                     visible={this.state.visibleSnackBar}
                     duration={3000}
                     onDismiss={() => this.setState({visibleSnackBar: false})}>
-                    Координаты отправлены
+                    Координаты передаются
                 </Snackbar>
                 <AccelerometerComponent/>
             </SafeAreaView>

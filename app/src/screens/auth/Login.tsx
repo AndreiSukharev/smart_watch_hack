@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, TextInput} from 'react-native-paper';
+import {Button, Switch, Text, TextInput} from 'react-native-paper';
 import {NavigationAuthProps, EnumAuthRoutes} from "../../types/routes-type/routes-auth-types";
 import {connect} from "react-redux";
 import {RootStateType} from "../../stores/redux";
@@ -18,6 +18,7 @@ type Props = NavigationType & LinkStateProps & LinkDispatchProps;
 const Login: React.FC<Props> = ({navigation, isLogged, loginReducer}) => {
     const [phone, setPhone] = useState<string>("");
     const [code, setCode] = useState<string>("");
+    const [isAgree, setIsAgree] = useState<boolean>(false);
 
     // const authorise = async () => {
     //     const userData : IUserLogin = {
@@ -60,8 +61,12 @@ const Login: React.FC<Props> = ({navigation, isLogged, loginReducer}) => {
                         textContentType="password"
                         secureTextEntry={true}
                     />
+                    <Switch value={isAgree} onValueChange={(value) => setIsAgree(value)}/>
+                    <Text>Я соглашаюсь с условиями обработки и использования моих
+                        персональных данных. Подробнее.
+                    </Text>
 
-                    <Button mode="contained" onPress={sendUserInput}>Войти</Button>
+                    <Button style={{marginTop: 10}} mode="contained" onPress={sendUserInput}>Войти</Button>
 
                     <Button onPress={() => navigation.navigate(EnumAuthRoutes.signUp)}>или создать аккаунт</Button>
                     {/*<Button onPress={() => navigation.navigate(EnumAuthRoutes.forgottenPassword)}>Забыли пароль?</Button>*/}

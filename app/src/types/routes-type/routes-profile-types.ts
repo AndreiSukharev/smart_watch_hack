@@ -1,7 +1,7 @@
 import {createStackNavigator, StackScreenProps} from "@react-navigation/stack";
 
 export enum EnumProfileRoutes {
-    profile = "Profile",
+    profile = "Главное",
 }
 
 type ProfileStackParamList = {

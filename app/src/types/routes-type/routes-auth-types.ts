@@ -1,8 +1,8 @@
 import {createStackNavigator, StackScreenProps} from "@react-navigation/stack";
 
 export enum EnumAuthRoutes {
-    login = "Login",
-    signUp = "SignUp",
+    login = "Аутентификация",
+    signUp = "Регистрация",
     forgottenPassword = "ForgottenPassword"
 }
 

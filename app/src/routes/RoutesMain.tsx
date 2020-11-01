@@ -4,7 +4,7 @@ import {EnumMainRoutes} from "../types/routes-type/routes-main-types";
 import {StyleSheet} from "react-native";
 import {MainStack} from "../types/routes-type/routes-main-types";
 import RoutesProfile from "./RoutesProfile";
-import RoutesCreditIndex from "./RoutesCreditIndex";
+import RoutesSupport from "./RoutesSupport";
 import RoutesSos from "./RoutesSos";
 import {styleColors} from "../styles";
 
@@ -35,7 +35,7 @@ const RoutesMain: React.FC<any> = () => {
             />
             <MainStack.Screen
                 name={EnumMainRoutes.support}
-                component={RoutesCreditIndex}
+                component={RoutesSupport}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons name="headphones" color={color} size={26} />
